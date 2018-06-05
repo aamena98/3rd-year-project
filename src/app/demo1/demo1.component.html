@@ -1,0 +1,12 @@
+<div style="text-align:center">
+  <h1>
+    Welcome {{ title }}!
+  </h1>
+ <h1>Hello World!!!</h1>
+ <input #input1 type="number">
+ <input #input2 type="number"><br>
+<button (click)="add(input1.value,input2.value)">Add me</button><br>
+<button (click)="sub(input1.value,input2.value)">Subtract me</button><br>
+<button (click)="mul(input1.value,input2.value)">Multiply me</button><br>
+<button (click)="div(input1.value,input2.value)">Divide me</button><br>
+<h1>Ans is : {{ans}}</h1>

@@ -1,0 +1,141 @@
+<div *ngIf="flag" class="container">
+<h1>Enter employee Information</h1>
+Employee ID:<input type="number" [(ngModel)]="eid" class="form-control">
+Employee Name:<input type="text" [(ngModel)]="ename" class="form-control">
+Employee Salary:<input type="number" [(ngModel)]="esalary" class="form-control">
+Employee Designation:<select [(ngModel)]="edesig" class="form-control">
+  <option>Sales Manager</option>
+  <option>Purchase Manager</option>
+  <option>Director</option>
+  <option>Clerk</option>
+</select>
+Gender:<br><input type="radio" value="Male" [(ngModel)]="gender" name="r1">Male<br>
+<input type="radio" value="Female" name="r1">Female<br><br>
+Status:<select [(ngModel)]="estatus" class="form-control">
+  <option>Yes</option>
+  <option>No</option>
+</select>
+Employee Photo:
+<input type="text" [(ngModel)]="epic" class="form-control">
+<button (click)="add()" class="btn btn-primary form-control">ADD</button>
+<br>
+<br>
+<!-- <table class="table">
+  <thead>
+    <th>Employee ID</th>
+    <th>Employee Name</th>
+    <th>Employee Salary</th>
+    <th>Employee Designation</th>
+    <th>Employee Gender</th>
+    <th>Employee Status</th>
+    <th>Employee Photo</th>
+    <th>Action</th>
+  </thead>
+  <tr *ngFor="let item of arr">
+    <td>{{item.e_id}}</td>
+    <td>{{item.e_name}}</td>
+    <td>{{item.e_salary}}</td>
+    <td>{{item.e_desig}}</td>
+    <td>{{item.e_gender}}</td>
+    <td>{{item.e_status}}</td>
+    <td>
+      <img src="{{item.e_img}}" width="200px" height="200px">
+    </td>
+    <td>
+      <button class="btn btn-default" type="button" (click)="delete(item)">
+        <span class="glyphicon glyphicon-trash" area-hidden="true"></span>
+      </button>
+      |
+      <button class="btn btn-default" type="button" (click)="update(item)">
+        <span class="glyphicon glyphicon-pencil" area-hidden="true"></span>
+      </button>
+
+
+    </td>
+  </tr>
+</table> -->
+</div>
+
+<div class="container">
+  <h1>Employee Information</h1>
+
+  <br>
+  <br>
+
+  <div class="row">
+
+
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">INFOCUS</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="active"><a (click)="onupdate()">Add <span class="sr-only">(current)</span></a></li>
+            <li><a href="#">Home</a></li>
+            <li class="dropdown">
+                </li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <ul class="list-group">
+          <li class="list-group-item">
+            <span class="badge">14</span>
+            Electronics
+          </li>
+          <li class="list-group-item">
+            <span class="badge">14</span>
+            Electonics
+          </li>
+          <li class="list-group-item">
+            <span class="badge">14</span>
+            Electronics
+          </li>
+        </ul>
+      </div>
+
+     <div class="col-md-9">
+      <div class="row">
+        <div *ngFor="let item of arr" class="col-sm-6 col-md-4">
+          <div class="thumbnail">
+            <img src="{{item.e_img}}" width="200px" height="200px">
+            <div class="caption">
+              <h3>{{item.e_name}}</h3>
+              <p>{{item.e_id}}</p>
+              <p>{{item.e_salary}}</p>
+              <p>{{item.e_status}}</p>
+              <p><a (click)="delete(item)" class="btn btn-primary" role="button">
+                <span class="glyphicon glyphicon-trash"></span>
+              </a> <a (click)="update(item)" class="btn btn-default" role="button">
+                <span class="glyphicon glyphicon-pencil"></span>
+              </a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      </div>
+
+    <div class="row">
+      <nav class="navbar navbar-default"></nav>
+    </div>
+  </div>
+

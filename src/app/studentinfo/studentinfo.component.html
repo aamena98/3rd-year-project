@@ -1,0 +1,41 @@
+<div class="container">
+<h1>Fill up the Information</h1>
+Roll no:<input [(ngModel)]="rno" type="number"ng class="form-control"><br>
+Name:<input [(ngModel)]="sname" type="text"><br>
+Gender:<input [(ngModel)]="gen" type="radio" name="r1" value="Male">Male<br>
+<input type="radio" name="r1" value="Female">Female<br>
+Mobile No.:<input [(ngModel)]="mobno" type="text"><br>
+City:<select [(ngModel)]="scity">
+  <option>Ahmedabad</option>
+  <option>Vadodara</option>
+  <option>Jammu</option>
+</select><br>
+Action:<select [(ngModel)]="saction">
+    <option *ngFor="let item of actionarr">{{item}}</option>
+  </select><br>
+<button (click)="add()">Add</button>
+
+<hr>
+<h1>Student Information</h1>
+<table border="1" class="table">
+  <thead>
+    <th>Roll No.</th>
+    <th>Name</th>
+    <th>Mobile No.</th>
+    <th>Gender</th>
+    <th>City</th>
+    <th>Action</th>
+  </thead>
+
+<tr *ngFor="let item of arr;let i=index">
+    <td>{{item.r_no}}</td>
+  <td>{{item.name}}</td>
+  <td>{{item.mobile}}</td>
+  <td>{{item.gender}}</td>
+  <td>{{item.city}}</td>
+  <td>{{item.action}}</td>
+  <td><button (click)="onDelete(i)">Delete</button></td>
+  <td><button (click)="onaction(item)">Action</button></td>
+  </tr>
+</table>
+</div>

@@ -1,0 +1,50 @@
+<div class="container">
+<h1>Fill up the product imformation</h1>
+Product ID:<input [(ngModel)]="pid" type="number" class="form-control"><br>
+Product Name:<input [(ngModel)]="pname" type="text" class="form-control"><br>
+Product Price:<input [(ngModel)]="pprice" type="number" class="form-control"><br>
+Manufacturing Date:<input [(ngModel)]="pmfg" type="text" class="form-control"><br>
+Product Image:<input type="text" class="form-control" [(ngModel)]="pimg"><br>
+Product Status:<select class="form-control" [(ngModel)]="pstatus">
+  <option>
+  yes
+  </option>
+  <option>no</option>
+</select>
+<button (click)="add()" class="btn btn-primary form-control">ADD</button>
+<hr>
+<table class="table">
+  <thead>
+    <th>Product Id</th>
+    <th>Product Name</th>
+    <th>Product Price </th>
+    <th>Manufacturing Date</th>
+    <th>Product Image
+    </th>
+    <th>Status</th>
+    <th>Product Action</th>
+  </thead>
+  <tr *ngFor="let item of arr">
+    <td>
+     {{item.p_id}}
+    </td>
+    <td>{{item.p_name}}</td>
+    <td>{{item.p_price}}</td>
+    <td>{{item.p_mfg}}</td>
+    <td>
+      <img src="{{item.p_img}}" width="200px" height="200px">
+    </td>
+    <td>{{item.p_status}}</td>
+    <td>
+      <button class="btn btn-default" type="button" (click)="delete(item)">
+        <span class="glyphicon glyphicon-trash" area-hidden="true"></span>
+      </button>
+      |
+      <button class="btn btn-default" type="button" (click)="update(item)">
+        <span class="glyphicon glyphicon-pencil" area-hidden="true"></span>
+      </button>
+
+    </td>
+  </tr>
+</table>
+</div>
